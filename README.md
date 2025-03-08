@@ -7,8 +7,10 @@ Beispiel zum einbinden der Kompnente:
 ```yaml
 
 external_components:
-  - source: components
-
+  - source: github://Migei/esphome_gigamodul/releases/latest
+    components: [ gigamodul ]
+    refresh: always
+    
 sensor:
   platform: "gigamodul"
   interrupt_pin: "D1"
