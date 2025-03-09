@@ -135,7 +135,7 @@ void GigamodulComponent::read_data() {
       // Die niederwertigen 4 Bits des High-Bytes werden als obere 4 Bits an das Low-Byte angehängt.
       uint16_t raw_value = ((high_byte & 0x0F) << 8) | low_byte;
       float sensor_value = raw_value / 10.0;
-        ESP_LOGI(TAG, "Sensor %d: raw value = %d", sensor_index, sensor_value);
+        ESP_LOGI(TAG, "Sensor %d: raw value = %f", sensor_index, sensor_value);
       float resistance = pow(10, sensor_value /10);
       this->sensors_[sensor_index]->publish_state(resistance/1000000);
     
